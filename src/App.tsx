@@ -1,13 +1,23 @@
-import React from 'react'
-import { Button } from './components/ui/button'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LoginPage , LandingPage, SignUpPage } from './pages';
 
-const App = () => {
+
+const App: React.FC = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-screen bg-slate-400'>
-      <h1>Plan Scheduler</h1>
-      <Button>Comming Soon</Button>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+      <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        
+        {/* Add other routes as needed */}
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
+
+
