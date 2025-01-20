@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Toggle } from '@/components/ui/toggle'; // Assuming you have a theme toggle component
 import { HiMenu, HiX } from 'react-icons/hi'; // For hamburger menu icon
+import { ModeToggle } from '@/components/ui/mode-toggle';
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false); // Toggle state for mobile menu
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       {/* Right Section - Theme Toggle, Get Started, Login */}
       <div className="flex items-center space-x-4">
         {/* Theme Toggle */}
-        <Toggle />
+        <ModeToggle />
 
         {/* Get Started and Login Buttons */}
         <Link to="/signup">
